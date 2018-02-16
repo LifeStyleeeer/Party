@@ -3,3 +3,4 @@ vino 500
 yiski 1000
 salam 20
 blatove
+shokolad
