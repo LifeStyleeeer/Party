@@ -1,3 +1,4 @@
 bira 100  
 vino 500
 yiski 1000
+salam 20
