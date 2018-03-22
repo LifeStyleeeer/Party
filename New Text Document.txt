@@ -1,0 +1,83 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    int beers =200;
+    int wines =300;
+    int beersOrder =0;
+    int beersDelivery =0;
+    int winesOrder =0;
+    int winesDelivery =0;
+    string input;
+    while (true)
+    {
+        cin >> input;
+        if (input == "END")
+        {
+            break;
+        }
+        string drink = input.substr(0,5);
+        int cnt = stoi(input.substr(input.find(":")+1));
+        cout << drink << endl;
+        if(drink == "beers")
+        {
+            beers+=cnt;
+            if (cnt>0)
+               beersDelivery++;
+                   else if (cnt<0)
+                   beersOrder++;
+        }
+        else if (drink == "wines")
+        {
+            wines+=cnt;
+            if (cnt>0)
+                winesDelivery++;
+            if(cnt<0)
+                winesOrder++;
+        }
+
+    }
+    cout <<"Wines : " << wines << endl;
+    cout <<"Deliveries : " << winesDelivery << endl;
+    cout <<"Orders : " << winesOrder << endl;
+    cout <<"Beers : " << beers << endl;
+    cout <<"Deliveries : " << beersDelivery << endl;
+    cout <<"Orders : " << beersOrder << endl;
+    return 0;
+
+}
+
+
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+int r1,h1,r2,h2;
+double v1,v2;
+string input;
+cin >> input;
+int firstc=input.find(",");
+int secondc=input.find(",",firstc+1);
+int thirdc=input.find(",",secondc+1);
+r1=stoi(input.substr(0,firstc))/10;
+h1=stoi(input.substr(firstc+1,secondc-firstc-1))/10;
+r2=stoi(input.substr(secondc+1,thirdc-secondc-1))/10;
+h2=stoi(input.substr(thirdc+1))/10;
+v1=r1*r1*h1*3.1415;
+v2=r2*r2*h2*3.1415;
+if(v1<v2)
+{
+    cout<< v2 <<endl;
+}
+else if (v1==v2)
+{cout << v1 << endl << v2 << endl;}
+else if (v1>v2)
+{cout << v1 << endl;}
+    return 0; }
